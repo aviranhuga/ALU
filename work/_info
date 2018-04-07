@@ -1,0 +1,116 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\avira\Desktop\CPU\ASS1
+Eadd_sub
+Z0 w1523117013
+Z1 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\avira\Desktop\CPU\ALU PROJECT
+Z5 8C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub.vhd
+Z6 FC:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub.vhd
+l0
+L18
+V9:]_zT35AfMK33cBgf_X12
+Z7 OV;C;10.1b;51
+32
+Z8 !s108 1523121302.332000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub.vhd|
+Z10 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub.vhd|
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+!s100 d3_;G<Pg`>dRJ;6kZ8[=J1
+!i10b 1
+Aadd_sub_arch
+R1
+R2
+R3
+DEx4 work 7 add_sub 0 22 9:]_zT35AfMK33cBgf_X12
+l43
+L29
+V0Bb_B95jiKG<F5DTRNdoE1
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 7jS^WC5SFLP35DACRk:]b3
+!i10b 1
+Eadd_sub_tb
+Z13 w1523121631
+Z14 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+R1
+R2
+R3
+R4
+Z15 8C:/Users/avira/Desktop/CPU/ALU PROJECT/Add_sub_tb.vhd
+Z16 FC:/Users/avira/Desktop/CPU/ALU PROJECT/Add_sub_tb.vhd
+l0
+L19
+VlLmES1LR4dzFNO_em`LDR3
+!s100 ek1KclN0:C>P7f05fB21C0
+R7
+32
+!i10b 1
+Z17 !s108 1523121642.794000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/Add_sub_tb.vhd|
+Z19 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/Add_sub_tb.vhd|
+R11
+R12
+Artl
+R14
+R1
+R2
+R3
+Z20 DEx4 work 10 add_sub_tb 0 22 lLmES1LR4dzFNO_em`LDR3
+l40
+L22
+VB]WW4kk;OGPV_1?j3aBeV0
+!s100 c9[Pd=nF>MelbcX]do^1:0
+R7
+32
+!i10b 1
+R17
+R18
+R19
+R11
+R12
+Efa
+Z21 w1523112741
+R2
+R3
+R4
+Z22 8C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd
+Z23 FC:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd
+l0
+L17
+V1]I3bEj]?iVd]GadK?7@k2
+R7
+32
+Z24 !s108 1523121302.152000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd|
+Z26 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd|
+R11
+R12
+!s100 72M;2`F[bB[kh^R^PcEZM1
+!i10b 1
+Afa_arch
+R2
+R3
+DEx4 work 2 fa 0 22 1]I3bEj]?iVd]GadK?7@k2
+l27
+L26
+V3m1Ai_=c@]@:D2fzX5>z70
+R7
+32
+R24
+R25
+R26
+R11
+R12
+!s100 f6T4OkQlH9@XM>FHSG3R01
+!i10b 1
