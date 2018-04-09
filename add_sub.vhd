@@ -41,11 +41,11 @@ signal moving_carry: std_logic_vector(N-2 downto 0);
 signal y_subtract : std_logic_vector(N-1 downto 0);
 
 begin                                         
--- Design Body
+-- xor y with sub for subtract op
 	SUBTRACT: for j in 0 to N-1 generate
 		y_subtract(j) <= sub xor y(j);
 		end generate SUBTRACT;
-
+-- build the array of FA
 	Array_Of_FA: for i in 0 to N-1 generate
 	
 		LSB: if i=0 generate

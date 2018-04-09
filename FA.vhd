@@ -27,6 +27,6 @@ architecture FA_arch of FA is
 begin                                         
 -- Design Body
 	sum <= x xor y xor cin;
-	Cout <= (x and y) or (y and cin) or (x and cin);
+	cout <= (x and y) or (y and cin) or (x and cin);
 end FA_arch;
 
