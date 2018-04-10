@@ -23,16 +23,16 @@ architecture rtl of shift_unit_tb is
 
 component shift_unit
 port (
-	a : in std_logic_vector(31 downto 0);
+	a : in std_logic_vector(7 downto 0);
 	b : in std_logic_vector(3 downto 0);	
 	left_side : in std_logic;
-	result : out std_logic_vector(31 downto 0)
+	result : out std_logic_vector(7 downto 0)
 	);
 end component;  
 
-signal A : std_logic_vector(31 downto 0);
+signal A : std_logic_vector(7 downto 0);
 signal B : std_logic_vector(3 downto 0);
-signal innerResult : std_logic_vector(31 downto 0);
+signal innerResult : std_logic_vector(7 downto 0);
 signal innerLeft : std_logic;
 
 begin
@@ -42,16 +42,35 @@ begin
 		testbench : process
         begin
 		innerLeft <= '0';
-		A <= "00011000000110000001100000011000";
-      	B <= "0111" ;
+		  A <= "10000001";
+     	B <= "0011" ;
 	    wait for 10 ns; 
-	    A <= "00011000000110000001100000011000";
-      	B <= "0010" ;
+	    innerLeft <= '0';
+	    A <= "10000001";
+     	B <= "0010" ;
 	    wait for 10 ns;
-		A <= "10000000100000001000000010000000";
+	    innerLeft <= '1';
+	    	A <= "10000001";
       	B <= "1010" ;
 	    wait for 10 ns;
-		A <= "10000000100000001000000010000000";
+	    innerLeft <= '1';
+		   A <= "10000001";
+      	B <= "1111" ;
+	    wait for 10 ns;
+	    innerLeft <= '1';
+		  A <= "10000001";
+     	B <= "0011" ;
+	    wait for 10 ns; 
+	    innerLeft <= '1';
+	    A <= "10000001";
+     	B <= "0010" ;
+	    wait for 10 ns;
+	    innerLeft <= '0';
+	    	A <= "10000001";
+      	B <= "1010" ;
+	    wait for 10 ns;
+	    innerLeft <= '0';
+		   A <= "10000001";
       	B <= "1111" ;
 	    wait for 10 ns;
 		
