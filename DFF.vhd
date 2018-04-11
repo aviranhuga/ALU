@@ -18,8 +18,7 @@ entity dff is port (
 	data : in std_logic;	
 	clk : in std_logic;	
 	reset : in std_logic;	
-	q : out std_logic;
-	q_not : out std_logic
+	q : out std_logic
 	);
 end dff;
 
@@ -28,14 +27,13 @@ begin
 -- Design Body
 	process(clk)
 	 begin
-	 if rising_edge(clk) then
+	 if clk='1' then
 		if reset='1' then
 			q <= '0';
 		else
 			q <= data;
-		end if
-		q_not <= not data;
-		end if
-	end process
+		end if;
+	 end if;
+	end process;
 end dff_arch;
 

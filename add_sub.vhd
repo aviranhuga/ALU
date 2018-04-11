@@ -18,11 +18,10 @@ use ieee.std_logic_arith.all;
 entity add_sub is 
 generic ( N: integer :=8);
 port (
-	x : in std_logic_vector(N-1 downto 0);
-	y : in std_logic_vector(N-1 downto 0);	
+	x : in std_logic_vector(2*N-1 downto 0);
+	y : in std_logic_vector(2*N-1 downto 0);	
 	sub : in std_logic;
-	result : out std_logic_vector(N-1 downto 0);
-	cout : out std_logic
+	result : out std_logic_vector(2*N-1 downto 0)
 	);
 end add_sub;
 
@@ -37,26 +36,27 @@ component FA
 	);
 end component;
 
-signal moving_carry: std_logic_vector(N-2 downto 0); 
-signal y_subtract : std_logic_vector(N-1 downto 0);
+signal moving_carry: std_logic_vector(2*N-2 downto 0); 
+signal y_subtract : std_logic_vector(2*N-1 downto 0);
+signal cout : std_logic;
 
 begin                                         
 -- xor y with sub for subtract op
-	SUBTRACT: for j in 0 to N-1 generate
+	SUBTRACT: for j in 0 to 2*N-1 generate
 		y_subtract(j) <= sub xor y(j);
 		end generate SUBTRACT;
 -- build the array of FA
-	Array_Of_FA: for i in 0 to N-1 generate
+	Array_Of_FA: for i in 0 to 2*N-1 generate
 	
 		LSB: if i=0 generate
 			FAi: FA port map (x(0),y_subtract(0),sub,result(0),moving_carry(0));
 			end generate LSB;
 			
-		MSB: if i=N-1 generate
+		MSB: if i=2*N-1 generate
 			FAi: FA port map (x(i),y_subtract(i),moving_carry(i-1),result(i),cout);
 			end generate MSB;
 			
-		REST_OF_BITS: if ((i/=0) AND (i/=N-1))  generate
+		REST_OF_BITS: if ((i/=0) AND (i/=2*N-1))  generate
 			FAi: FA port map (x(i),y_subtract(i),moving_carry(i-1), result(i), moving_carry(i));
 			end generate REST_OF_BITS;
 			

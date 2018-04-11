@@ -1,0 +1,45 @@
+-- ====================================================================
+--
+--	File Name:		status_unit.vhd
+--	Description:	find min or max and return it
+--					
+--
+--	Date:			7/07/2018
+--	Designer:		Aviran Huga
+--
+-- ====================================================================
+
+
+-- libraries decleration
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity status_unit is 
+generic ( N: integer :=8);
+port (	
+	en : in std_logic;
+	eq : in std_logic;
+	LSB : in std_logic;
+	status : out std_logic_vector(5 downto 0)
+	);
+end status_unit;
+
+architecture status_unit_arch of status_unit is
+
+begin                                         
+	process(en,eq,LSB)
+	begin
+		if en='1' then
+			if eq='1' then -- they are equals
+				status <= "101010";
+			elsif LSB='1' then -- a is bigger
+				status <= "011100";
+			else 
+				status <= "010011"
+			end if;
+		else 
+			status <= (others => '0');
+		end if;
+	end process;
+end status_unit_arch;

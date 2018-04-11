@@ -19,7 +19,7 @@ generic ( N: integer :=8);
 port (
 	x : in std_logic_vector(N-1 downto 0);
 	y : in std_logic_vector(N-1 downto 0);
-	clock: in std_logic;
+	en: in std_logic;
 	result : out std_logic_vector(2*N-1 downto 0)
 	);
 end MUL;
@@ -27,9 +27,9 @@ end MUL;
 architecture MUL_arch of MUL is
 begin                                         
 -- Design Body
-	process(x,y,clock)
+	process(x,y,en)
 	begin
-		if rising_edge(clock) then
+		if en='1' then
 		result <= SIGNED(x) * SIGNED(y);
 		end if;
 	end process;

@@ -1,0 +1,273 @@
+-- ====================================================================
+--
+--	File Name:		Arithmetic_unit.vhd
+--	Description:	Arithmetic unit implement
+--					
+--
+--	Date:			7/07/2018
+--	Designer:		Aviran Huga
+--
+-- ====================================================================
+
+
+-- libraries decleration
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity Arithmetic_unit is 
+generic ( N: integer :=8);
+port (
+	A : in std_logic_vector(N-1 downto 0);
+	B : in std_logic_vector(N-1 downto 0);	
+	Opcode : in std_logic_vector(3 downto 0);
+	clk : in std_logic;
+	HI : out std_logic_vector(N-1 downto 0);
+	LO : out std_logic_vector(N-1 downto 0);
+	status: out std_logic_vector(5 downto 0)
+	);
+end Arithmetic_unit;
+
+architecture Arithmetic_unit_arch of Arithmetic_unit is
+
+component add_sub 
+generic( N: integer :=8);
+port (
+	x : in std_logic_vector(2*N-1 downto 0);
+	y : in std_logic_vector(2*N-1 downto 0);	
+	sub : in std_logic;
+	result : out std_logic_vector(2*N-1 downto 0)
+	);
+end component;
+
+component AU_IN_MUX 
+generic( N: integer :=8);
+port (
+	input_a : in std_logic_vector(N-1 downto 0);
+	input_b : in std_logic_vector(N-1 downto 0);	
+	SEL : in std_logic;
+	output1_a : out std_logic_vector(N-1 downto 0);--output for add/sub
+	output1_b : out std_logic_vector(N-1 downto 0);	
+	output2_a : out std_logic_vector(N-1 downto 0);--output for mul
+	output2_b : out std_logic_vector(N-1 downto 0)
+	);
+end component;
+
+component AU_OUT_MUX 
+generic( N: integer :=8);
+port (
+	input_a : in std_logic_vector(2*N-1 downto 0);-- ADD/SUB  Output
+	input_b : in std_logic_vector(2*N-1 downto 0);-- MUL  output
+	input_c : in std_logic_vector(2*N-1 downto 0);-- MIN_MAX output
+	SEL : in std_logic_vector(1 downto 0);
+	output_LO : out std_logic_vector(N-1 downto 0);	
+	output_HI : out std_logic_vector(N-1 downto 0)	
+	);
+end component;
+
+component MAC_reg 
+generic( N: integer :=8);
+port (
+	data : in std_logic_vector(2*N-1 downto 0);
+	clk : in std_logic;
+	reset : in std_logic;
+	q : out std_logic_vector(2*N-1 downto 0)
+	);
+end component;
+
+component min_max 
+generic( N: integer :=8);
+port (
+	a : in std_logic_vector(N-1 downto 0);
+	b : in std_logic_vector(N-1 downto 0);	
+	en : in std_logic;
+	LSB : in std_logic;
+	min_or_max : in std_logic; -- '0' for finding min, '1' for finding max.
+	result : out std_logic_vector(2*N-1 downto 0)
+	);
+end component;
+
+component MUL 
+generic( N: integer :=8);
+port (
+	x : in std_logic_vector(N-1 downto 0);
+	y : in std_logic_vector(N-1 downto 0);
+	en: in std_logic;
+	result : out std_logic_vector(2*N-1 downto 0)
+	);
+end component;
+
+component mux_21 
+generic( N: integer :=8);
+port (
+	input : in std_logic_vector(2*N-1 downto 0);
+	SEL : in std_logic;
+	output_a : out std_logic_vector(2*N-1 downto 0); 
+	output_b : out std_logic_vector(2*N-1 downto 0) 
+	);
+end component;
+
+component add_sub_input_mux 
+generic( N: integer :=8);
+port (	
+	input_a : in std_logic_vector(N-1 downto 0);--main input
+	input_b : in std_logic_vector(N-1 downto 0);--main input
+	inputMUL_a : in std_logic_vector(2*N-1 downto 0);-- MUL input
+	inputMAC_b : in std_logic_vector(2*N-1 downto 0);-- MAC input
+	SEL : in std_logic; -- '0' for main input
+	A_OUT : out std_logic_vector(2*N-1 downto 0);
+	B_OUT : out std_logic_vector(2*N-1 downto 0)
+	);
+end component;
+
+component status_unit 
+generic( N: integer :=8);
+port (	
+	en : in std_logic;
+	eq : in std_logic;
+	LSB : in std_logic;
+	status : out std_logic_vector(5 downto 0)
+	);
+end component;
+
+-- control signals
+signal AU_IN_MUX_SEL: std_logic;
+signal AU_OUT_MUX_SEL: std_logic_vector(1 downto 0);
+signal MAC_reg_reset: std_logic;
+signal MAC_reg_en: std_logic;
+signal add_sub_input_mux_en : std_logic;
+signal add_sub_sub : std_logic;
+signal ADD_SUB_OUT_MUX_SEL: std_logic;
+signal MUL_en: std_logic;
+signal MUL_OUT_MUX_SEL: std_logic;
+signal min_max_en: std_logic;
+signal min_max_choose: std_logic;
+signal status_unit_en: std_logic;
+
+-- connection signals
+signal AU_IN_MUX_output1_a: std_logic_vector(N-1 downto 0);
+signal AU_IN_MUX_output1_b: std_logic_vector(N-1 downto 0);
+signal AU_IN_MUX_output2_a: std_logic_vector(N-1 downto 0);
+signal AU_IN_MUX_output2_b: std_logic_vector(N-1 downto 0);
+
+
+signal Add_sub_out_mux_a: std_logic_vector(2*N-1 downto 0);
+signal Add_sub_out_mux_b: std_logic_vector(2*N-1 downto 0);
+
+signal MAC_reg_q: std_logic_vector(2*N-1 downto 0);
+
+signal MUL_OUTPUT_MUX_a: std_logic_vector(2*N-1 downto 0);
+signal MUL_OUTPUT_MUX_b: std_logic_vector(2*N-1 downto 0);
+
+signal ADD_SUB_INPUT_A: std_logic_vector(2*N-1 downto 0);
+signal ADD_SUB_INPUT_B: std_logic_vector(2*N-1 downto 0);
+
+signal ADD_SUB_RESULT: std_logic_vector(2*N-1 downto 0);
+signal MUL_RESULT: std_logic_vector(2*N-1 downto 0);
+signal min_max_result: std_logic_vector(2*N-1 downto 0);
+signal eq: std_logic;
+
+begin
+	--component init
+	status_unit_s: status_unit
+		generic map(N)
+		port map(
+		en => status_unit_en,
+		eq => eq,
+		LSB => ADD_SUB_RESULT(2*N-1),
+		status => status);
+	
+	AU_OUT_MUX_s: AU_OUT_MUX
+		generic map(N)
+		port map(
+		input_a => Add_sub_out_mux_a,
+		input_b => MUL_OUTPUT_MUX_a,
+		input_c => min_max_result,
+		SEL => AU_OUT_MUX_SEL,
+		output_LO => LO,
+		output_HI => HI);
+	
+	min_max_s: min_max
+		generic map (N)
+		port map(
+		a => A,
+		b => B,
+		en => min_max_en,
+		LSB => ADD_SUB_RESULT(2*N-1),
+		min_or_max => min_max_choose,
+		result => min_max_result);
+		
+	MUL_OUT_MUX_s: mux_21
+		generic map (N)
+		port map(
+		input => MUL_RESULT,
+		SEL => MUL_OUT_MUX_SEL,
+		output_a => MUL_OUTPUT_MUX_a,
+		output_b => MUL_OUTPUT_MUX_b);
+		
+	MUL_s: MUL
+		generic map (N)
+		port map(
+		x => AU_IN_MUX_output2_a,
+		y => AU_IN_MUX_output2_b,
+		en => MUL_en,
+		result =>MUL_RESULT);
+	
+	ADD_SUB_OUT_MUX_s: mux_21
+		generic map (N)
+		port map(
+		input => ADD_SUB_RESULT,
+		SEL => ADD_SUB_OUT_MUX_SEL,
+		output_a => Add_sub_out_mux_a,
+		output_b =>Add_sub_out_mux_b);
+	
+	add_sub_s: add_sub
+		generic map (N)
+		port map(
+		x => ADD_SUB_INPUT_A,
+		y => ADD_SUB_INPUT_B,
+		sub => add_sub_sub,
+		result => ADD_SUB_RESULT);
+		
+	add_sub_input_mux_s: add_sub_input_mux
+		generic map (N)
+		port map(
+		input_a => AU_IN_MUX_output1_a,
+		input_b => AU_IN_MUX_output1_b,
+		inputMUL_a => MUL_OUTPUT_MUX_b,
+		inputMAC_b => MAC_reg_q,
+		SEL => add_sub_input_mux_en,
+		A_OUT => ADD_SUB_INPUT_A,
+		B_OUT => ADD_SUB_INPUT_B);
+	
+	MAC_reg_s: MAC_reg
+		generic map (N)
+		port map(
+		data => Add_sub_out_mux_b,
+		clk => MAC_reg_en,
+		reset => MAC_reg_reset,
+		q => MAC_reg_q);
+			
+	AU_IN_MUX_s: AU_IN_MUX
+		generic map(N)
+		port map(
+		input_a => A, 
+		input_b => B,
+		SEL => AU_IN_MUX_SEL,
+		output1_a => AU_IN_MUX_output1_a,
+		output1_b => AU_IN_MUX_output1_b,
+		output2_a => AU_IN_MUX_output2_a,
+	    output2_b => AU_IN_MUX_output2_b);
+			   
+	process(A,B)
+	begin
+		if SIGNED(A) = SIGNED(B) then
+			eq <= '1';
+		else
+			eq <= '0';
+		end if;
+	end process;
+	
+		
+end Arithmetic_unit_arch;		   
+			   
