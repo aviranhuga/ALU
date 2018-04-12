@@ -21,15 +21,16 @@ port (
 	input_b : in std_logic_vector(2*N-1 downto 0);-- MUL  output
 	input_c : in std_logic_vector(2*N-1 downto 0);-- MIN_MAX output
 	SEL : in std_logic_vector(1 downto 0);
-	output_LO : out std_logic_vector(N-1 downto 0);	
-	output_HI : out std_logic_vector(N-1 downto 0)	
+	TRIGGER : in std_logic;
+	output_LO : out std_logic_vector(N-1 downto 0) := (others => '0');	
+	output_HI : out std_logic_vector(N-1 downto 0) := (others => '0')
 	);
 end AU_OUT_MUX;
 
 architecture AU_OUT_MUX_arch of AU_OUT_MUX is
 begin                                         
 -- Design Body
-	process(input_a,input_b,input_c,SEL)
+	process(input_a,input_b,input_c,SEL,TRIGGER)
 		begin
 		case SEL is
 			when "00" => 

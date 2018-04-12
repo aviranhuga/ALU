@@ -21,8 +21,8 @@ port (
 	input_b : in std_logic_vector(2*N-1 downto 0);-- MUL  output
 	input_c : in std_logic_vector(2*N-1 downto 0);-- MIN_MAX output
 	SEL : in std_logic_vector(1 downto 0);
-	output_LO : out std_logic_vector(N-1 downto 0);	
-	output_HI : out std_logic_vector(N-1 downto 0)	
+	output_LO : out std_logic_vector(N-1 downto 0) := (others => '0');	
+	output_HI : out std_logic_vector(N-1 downto 0) := (others => '0');
 	);
 end AU_OUT_MUX;
 
@@ -34,7 +34,7 @@ begin
 		case SEL is
 			when "00" => 
 				output_HI <= input_a(2*N-1 downto N);
-				LO_OUT <= input_a(N-1 downto 0);
+				output_LO <= input_a(N-1 downto 0);
 		  when "01" => 
 				output_HI <= input_b(2*N-1 downto N);
 				output_LO <= input_b(N-1 downto 0);

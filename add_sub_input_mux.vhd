@@ -31,7 +31,7 @@ architecture add_sub_input_mux_arch of add_sub_input_mux is
 signal zeros: std_logic_vector(N-1 downto 0) := ( others => '0'); 
 begin                                         
 -- Design Body
-	process(input_a,input_b,SEL)
+	process(input_a,input_b,SEL,inputMUL_a,inputMAC_b)
 		begin
 		if SEL='0' then 
 					A_OUT <= (others => input_a(N-1));
@@ -40,7 +40,7 @@ begin
 					B_OUT(N-1 downto 0) <= input_b;
 		else 
 			    A_OUT <= inputMUL_a;
-				  B_OUT <= inputMAC_b;
+				B_OUT <= inputMAC_b;
 			end if;
 	end process;
 end add_sub_input_mux_arch;

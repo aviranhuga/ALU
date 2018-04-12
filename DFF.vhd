@@ -15,17 +15,17 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity dff is port (
-	data : in std_logic;	
-	clk : in std_logic;	
-	reset : in std_logic;	
-	q : out std_logic
+	data : in std_logic := '0';	
+	clk : in std_logic := '0';	
+	reset : in std_logic := '0';	
+	q : out std_logic := '0'
 	);
 end dff;
 
 architecture dff_arch of dff is
 begin                                         
 -- Design Body
-	process(clk)
+	process(clk,data,reset)
 	 begin
 	 if clk='1' then
 		if reset='1' then
