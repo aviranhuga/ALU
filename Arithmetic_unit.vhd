@@ -142,18 +142,12 @@ signal AU_IN_MUX_output1_a: std_logic_vector(N-1 downto 0);
 signal AU_IN_MUX_output1_b: std_logic_vector(N-1 downto 0);
 signal AU_IN_MUX_output2_a: std_logic_vector(N-1 downto 0);
 signal AU_IN_MUX_output2_b: std_logic_vector(N-1 downto 0);
-
-
 signal Add_sub_out_reg: std_logic_vector(2*N-1 downto 0);
-
 signal MAC_reg_q: std_logic_vector(2*N-1 downto 0);
-
 signal MUL_OUTPUT_MUX_a: std_logic_vector(2*N-1 downto 0);
 signal MUL_OUTPUT_MUX_b: std_logic_vector(2*N-1 downto 0);
-
 signal ADD_SUB_INPUT_A: std_logic_vector(2*N-1 downto 0);
 signal ADD_SUB_INPUT_B: std_logic_vector(2*N-1 downto 0);
-
 signal ADD_SUB_RESULT: std_logic_vector(2*N-1 downto 0);
 signal MUL_RESULT: std_logic_vector(2*N-1 downto 0);
 signal min_max_result: std_logic_vector(2*N-1 downto 0);
@@ -268,10 +262,8 @@ begin
 	--opcode decode and change control lines
 	process(clk)
 		begin
-		if (rising_edge(clk)) then
 		case Opcode is
 			when "0001" => --ADD OPCODE
-				--MAC_OP_CONTROL <= "01";--AU control for mac op (2bit)
 				AU_IN_MUX_SEL <= '0';--'0' for add/sub, '1' for mul (1bit)
 				AU_OUT_MUX_SEL <= "00"; --'00' for add/sub '01' for mul '10' for min/max other-'0' (2bit)
 				MAC_reg_reset <= '0';-- '1' for reset (1bit)
@@ -280,12 +272,8 @@ begin
 				add_sub_sub <= '0';-- '0' for add , '1' for subtract (1bit)
 				ADD_SUB_OUT_Reg_en <= '1';--'1' for enable output (1bit)
 				MUL_en <= '0';-- '1' for enable (1bit)
-				--MUL_OUT_MUX_SEL <= '0'-- '0' for output, '1' for mac (1bit)
 				min_max_en <= '0';-- '1' for enable (1bit)
-				--min_max_choose <= --'1' for max (1bit)
-				--U_OUT_MUX_TRIGGER <= not AU_OUT_MUX_TRIGGER; 'Trigger output result"
 			when "0010" => -- SUB OPCODE
-				--MAC_OP_CONTROL <= "01";--AU control for mac op (2bit)
 				AU_IN_MUX_SEL <= '0';--'0' for add/sub, '1' for mul (1bit)
 				AU_OUT_MUX_SEL <= "00"; --'00' for add/sub '01' for mul '10' for min/max other-'0' (2bit)
 				MAC_reg_reset <= '0';-- '1' for reset (1bit)
@@ -294,24 +282,16 @@ begin
 				add_sub_sub <= '1';-- '0' for add , '1' for subtract (1bit)
 				ADD_SUB_OUT_Reg_en <= '1';-- '0' for output , '1' for mac (1bit)
 				MUL_en <= '0';-- '1' for enable (1bit)
-				--MUL_OUT_MUX_SEL <= '0'-- '0' for output, '1' for mac (1bit)
 				min_max_en <= '0';-- '1' for enable (1bit)
-				--min_max_choose <= --'1' for max (1bit)
-				--U_OUT_MUX_TRIGGER <= not AU_OUT_MUX_TRIGGER; 'Trigger output result"
 			when "0011" => --MUL
-				--MAC_OP_CONTROL <= "01";--AU control for mac op (2bit)
 				AU_IN_MUX_SEL <= '1';--'0' for add/sub, '1' for mul (1bit)
 				AU_OUT_MUX_SEL <= "01"; --'00' for add/sub '01' for mul '10' for min/max other-'0' (2bit)
 				MAC_reg_reset <= '0';-- '1' for reset (1bit)
 				MAC_reg_en <= '0';-- '1' for en (1bit)
-				--add_sub_input_mux_en <= '0';-- '0' for A B , '1' for mac op (1bit)
-				--add_sub_sub <= '1';-- '0' for add , '1' for subtract (1bit)
 				ADD_SUB_OUT_Reg_en <= '0';-- '1' for enable (1bit)
 				MUL_en <= '1';-- '1' for enable (1bit)
 				MUL_OUT_MUX_SEL <= '0';-- '0' for output, '1' for mac (1bit)
 				min_max_en <= '0';-- '1' for enable (1bit)
-				--min_max_choose <= --'1' for max (1bit)
-				--U_OUT_MUX_TRIGGER <= not AU_OUT_MUX_TRIGGER; 'Trigger output result"
 			when "0100" => -- MAC OPCODE
 				case MAC_OP_CONTROL is
 				when "00" =>
@@ -339,8 +319,6 @@ begin
 				MAC_OP_CONTROL <= "00";--AU control for mac op (2bit)
 				end case;
 			when "0101" => -- MAX OPCODE
-				--MAC_OP_CONTROL <= "01";--AU control for mac op (2bit)
-				--AU_IN_MUX_SEL <= '0';--'0' for add/sub, '1' for mul (1bit)
 				AU_OUT_MUX_SEL <= "10"; --'00' for add/sub '01' for mul '10' for min/max other-'0' (2bit)
 				MAC_reg_reset <= '0';-- '1' for reset (1bit)
 				MAC_reg_en <= '0';-- '1' for en (1bit)
@@ -348,13 +326,9 @@ begin
 				add_sub_sub <= '0';-- '0' for add , '1' for subtract (1bit)
 				ADD_SUB_OUT_Reg_en <= '0';--'1' for enable output (1bit)
 				MUL_en <= '0';-- '1' for enable (1bit)
-				--MUL_OUT_MUX_SEL <= '0'-- '0' for output, '1' for mac (1bit)
 				min_max_en <= '1';-- '1' for enable (1bit)
 				min_max_choose <= '1';--'1' for max (1bit)
-				--U_OUT_MUX_TRIGGER <= not AU_OUT_MUX_TRIGGER; 'Trigger output result"
 			when "0110" => -- MIN OPCODE
-				--MAC_OP_CONTROL <= "01";--AU control for mac op (2bit)
-				--AU_IN_MUX_SEL <= '0';--'0' for add/sub, '1' for mul (1bit)
 				AU_OUT_MUX_SEL <= "10"; --'00' for add/sub '01' for mul '10' for min/max other-'0' (2bit)
 				MAC_reg_reset <= '0';-- '1' for reset (1bit)
 				MAC_reg_en <= '0';-- '1' for en (1bit)
@@ -362,58 +336,23 @@ begin
 				add_sub_sub <= '0';-- '0' for add , '1' for subtract (1bit)
 				ADD_SUB_OUT_Reg_en <= '0';--'1' for enable output (1bit)
 				MUL_en <= '0';-- '1' for enable (1bit)
-				--MUL_OUT_MUX_SEL <= '0'-- '0' for output, '1' for mac (1bit)
 				min_max_en <= '1';-- '1' for enable (1bit)
 				min_max_choose <= '0';--'1' for max (1bit)
-				--U_OUT_MUX_TRIGGER <= not AU_OUT_MUX_TRIGGER; 'Trigger output result"
 			when "0111" =>
-				--MAC_OP_CONTROL <= "01";--AU control for mac op (2bit)
-				--AU_IN_MUX_SEL <= '0';--'0' for add/sub, '1' for mul (1bit)
 				AU_OUT_MUX_SEL <= "11"; --'00' for add/sub '01' for mul '10' for min/max other-'0' (2bit)
 				MAC_reg_reset <= '1';-- '1' for reset (1bit)
 				MAC_reg_en <= '1';-- '1' for en (1bit)
-				--add_sub_input_mux_en <= '0';-- '0' for A B , '1' for mac op (1bit)
-				--add_sub_sub <= '0';-- '0' for add , '1' for subtract (1bit)
-				--ADD_SUB_OUT_Reg_en <= '1';-- '1' for enable (1bit)
 				MUL_en <= '0';-- '1' for enable (1bit)
-				--MUL_OUT_MUX_SEL <= '0'-- '0' for output, '1' for mac (1bit)
 				min_max_en <= '0';-- '1' for enable (1bit)
-				--min_max_choose <= --'1' for max (1bit)
-				--U_OUT_MUX_TRIGGER <= not AU_OUT_MUX_TRIGGER; 'Trigger output result"
 			when others => -- clear all
 				MAC_OP_CONTROL <= "00";--AU control for mac op (2bit)
-				--AU_IN_MUX_SEL <= '0';--'0' for add/sub, '1' for mul (1bit)
 				AU_OUT_MUX_SEL <= "11"; --'00' for add/sub '01' for mul '10' for min/max other-'0' (2bit)
-				--MAC_reg_reset <= '1';-- '1' for reset (1bit)
 				MAC_reg_en <= '0';-- '1' for en (1bit)
 				add_sub_input_mux_en <= '0';-- '0' for A B , '1' for mac op (1bit)
 				add_sub_sub <= '0';-- '0' for add , '1' for subtract (1bit)
 				ADD_SUB_OUT_Reg_en <= '1';-- '1' for enable (1bit)
 				MUL_en <= '0';-- '1' for enable (1bit)
-				--MUL_OUT_MUX_SEL <= '0'-- '0' for output, '1' for mac (1bit)
 				min_max_en <= '0';-- '1' for enable (1bit)
-				--min_max_choose <= --'1' for max (1bit)
-				--U_OUT_MUX_TRIGGER <= not AU_OUT_MUX_TRIGGER; 'Trigger output result"
 		end case;
-		end if;
 	end process;
 end Arithmetic_unit_arch;		   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   
-			   

@@ -19,7 +19,7 @@ entity shift_unit is
 generic ( N: integer :=8);
 port (
 	a : in std_logic_vector(N-1 downto 0);
-	b : in std_logic_vector(3 downto 0);	
+	b : in std_logic_vector(4 downto 0);	
 	left_side : in std_logic; -- '0' for right and '1' for left
 	result : out std_logic_vector(N-1 downto 0)
 	);
@@ -37,9 +37,11 @@ component mux31
 	);
 end component;
 
+--wires between different levels of shift
 signal shift1_wire : std_logic_vector(N-1 downto 0);
 signal shift2_wire : std_logic_vector(N-1 downto 0);
 signal shift3_wire : std_logic_vector(N-1 downto 0);
+signal shift4_wire : std_logic_vector(N-1 downto 0);
 signal zero : std_logic;
 
 begin              
@@ -96,25 +98,46 @@ begin
 		
 		end generate SHIFT3;
 
--- last shift line
+-- four shift line
 	SHIFT4: for i in 0 to N-1 generate
 	
 		FIRST_MUX44: if (i<8 and i+8>N-1) generate
-		MUX4i: mux31 port map (a=>shift3_wire(i),b=>zero,c=>zero,left_right=>left_side, en=>b(3),o=>result(i));
+		MUX4i: mux31 port map (a=>shift3_wire(i),b=>zero,c=>zero,left_right=>left_side, en=>b(3),o=>shift4_wire(i));
 		end generate FIRST_MUX44;
 	
 		FIRST_MUX4: if (i<8 and i+8<N) generate
-		MUX4i: mux31 port map (a=>shift3_wire(i),b=>shift3_wire(i+8),c=>zero,left_right=>left_side, en=>b(3),o=>result(i));
+		MUX4i: mux31 port map (a=>shift3_wire(i),b=>shift3_wire(i+8),c=>zero,left_right=>left_side, en=>b(3),o=>shift4_wire(i));
 		end generate FIRST_MUX4;
 		
 		LAST_MUX4: if (i>N-9 and i>7) generate
-		MUX4i: mux31 port map (a=>shift3_wire(i),b=>zero,c=>shift3_wire(i-8),left_right=>left_side, en=>b(3),o=>result(i));
+		MUX4i: mux31 port map (a=>shift3_wire(i),b=>zero,c=>shift3_wire(i-8),left_right=>left_side, en=>b(3),o=>shift4_wire(i));
 		end generate LAST_MUX4;
 		
 		REST_MUX4: if (i>7 and i<N-8) generate
-		MUX4i: mux31 port map (a=>shift3_wire(i),b=>shift3_wire(i+8),c=>shift3_wire(i-8),left_right=>left_side,en=>b(3),o=>result(i));
+		MUX4i: mux31 port map (a=>shift3_wire(i),b=>shift3_wire(i+8),c=>shift3_wire(i-8),left_right=>left_side,en=>b(3),o=>shift4_wire(i));
 		end generate REST_MUX4;
 		
 		end generate SHIFT4;
 		
+-- last shift_line
+	SHIFT5: for i in 0 to N-1 generate
+	
+		FIRST_MUX5: if (i<16 and i+16>N-1) generate
+		MUX5i: mux31 port map (a=>shift4_wire(i),b=>zero,c=>zero,left_right=>left_side, en=>b(4),o=>result(i));
+		end generate FIRST_MUX5;
+	
+		FIRST_MUX55: if (i<16 and i+16<N) generate
+		MUX5i: mux31 port map (a=>shift4_wire(i),b=>shift4_wire(i+16),c=>zero,left_right=>left_side, en=>b(4),o=>result(i));
+		end generate FIRST_MUX55;
+		
+		LAST_MUX5: if (i>N-17 and i>15) generate
+		MUX5i: mux31 port map (a=>shift4_wire(i),b=>zero,c=>shift4_wire(i-16),left_right=>left_side, en=>b(4),o=>result(i));
+		end generate LAST_MUX5;
+		
+		REST_MUX5: if (i>15 and i<N-16) generate
+		MUX5i: mux31 port map (a=>shift4_wire(i),b=>shift4_wire(i+16),c=>shift4_wire(i-16),left_right=>left_side,en=>b(4),o=>result(i));
+		end generate REST_MUX5;
+		
+		end generate SHIFT5;
+
 end shift_unit_arch;

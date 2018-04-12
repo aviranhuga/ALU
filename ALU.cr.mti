@@ -1,4 +1,23 @@
-{C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub_input_mux.vhd} {1 {vcom -work work -2002 -explicit {C:\Users\avira\Desktop\CPU\ALU PROJECT\add_sub_input_mux.vhd}
+{C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_unit.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_unit.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity ALU_unit
+-- Compiling architecture ALU_unit_arch of ALU_unit
+
+} {} {}} {C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit_tb.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit_tb.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity shift_unit_tb
+-- Compiling architecture rtl of shift_unit_tb
+
+} {} {}} {C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub_input_mux.vhd} {1 {vcom -work work -2002 -explicit {C:\Users\avira\Desktop\CPU\ALU PROJECT\add_sub_input_mux.vhd}
 Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -31,6 +50,16 @@ Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
 -- Compiling entity mux31
 -- Compiling architecture mux31_arch of mux31
 
+} {} {}} {C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_tb.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_tb.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity ALU_tb
+-- Compiling architecture rtl of ALU_tb
+
 } {} {}} {C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd}
 Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
 -- Loading package STANDARD
@@ -46,6 +75,23 @@ Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
 -- Loading package std_logic_1164
 -- Compiling entity dff
 -- Compiling architecture dff_arch of dff
+
+} {} {}} {C:/Users/avira/Desktop/CPU/ALU PROJECT/OUTPUT_SELECTOR.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/avira/Desktop/CPU/ALU PROJECT/OUTPUT_SELECTOR.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity OUTPUT_SELECTOR
+-- Compiling architecture OUTPUT_SELECTOR_arch of OUTPUT_SELECTOR
+
+} {} {}} {C:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity min_max
+-- Compiling architecture min_max_arch of min_max
 
 } {} {}} {C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub.vhd}
 Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012

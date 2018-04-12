@@ -16,7 +16,7 @@ L18
 V5V_]g_V3nLGSJ6L_2=>?[2
 Z7 OV;C;10.1b;51
 32
-Z8 !s108 1523462172.116000
+Z8 !s108 1523543749.944000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub.vhd|
 Z10 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/add_sub.vhd|
 Z11 o-work work -2002 -explicit -O0
@@ -52,7 +52,7 @@ L17
 VU7P_oRE^WY1H2R6[cAla]2
 R7
 32
-Z16 !s108 1523477362.444000
+Z16 !s108 1523543750.103000
 Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\add_sub_input_mux.vhd|
 Z18 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\add_sub_input_mux.vhd|
 R11
@@ -75,22 +75,98 @@ R11
 R12
 !s100 BFLbHgeoa3hm`1nNC5bmi1
 !i10b 1
-Earithmetic_unit
-Z19 w1523534925
+Ealu_tb
+Z19 w1523553622
+Z20 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 R1
 R2
 R3
 R4
-Z20 8C:\Users\avira\Desktop\CPU\ALU PROJECT\Arithmetic_unit.vhd
-Z21 FC:\Users\avira\Desktop\CPU\ALU PROJECT\Arithmetic_unit.vhd
+Z21 8C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_tb.vhd
+Z22 FC:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_tb.vhd
+l0
+L19
+V6=mkdSkRm]U]C57PQea8e1
+R7
+32
+Z23 !s108 1523553626.627000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_tb.vhd|
+Z25 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_tb.vhd|
+R11
+R12
+!s100 B4^dONJ3D[iYDPY5LgjnC3
+!i10b 1
+Artl
+R20
+R1
+R2
+R3
+DEx4 work 6 alu_tb 0 22 6=mkdSkRm]U]C57PQea8e1
+l45
+L22
+VZ21kHiLAck8UPaQMegfM[2
+R7
+32
+R23
+R24
+R25
+R11
+R12
+!s100 A[jUX^cTV^R4gRB`JUMSE3
+!i10b 1
+Ealu_unit
+Z26 w1523553487
+R1
+R2
+R3
+R4
+Z27 8C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_unit.vhd
+Z28 FC:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_unit.vhd
+l0
+L18
+VI3SD16VcHQK]oQ7:1<J6j2
+!s100 DT]XTCY28:5gX@O9LXo:Y3
+R7
+32
+!i10b 1
+Z29 !s108 1523553626.783000
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_unit.vhd|
+Z31 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/ALU_unit.vhd|
+R11
+R12
+Aalu_unit_arch
+R1
+R2
+R3
+Z32 DEx4 work 8 alu_unit 0 22 I3SD16VcHQK]oQ7:1<J6j2
+l99
+L31
+Z33 VU3zm@G2>0lAi4jRU_=S_60
+Z34 !s100 fV@kkWcF?J2jo0o_[1gWV3
+R7
+32
+!i10b 1
+R29
+R30
+R31
+R11
+R12
+Earithmetic_unit
+Z35 w1523552373
+R1
+R2
+R3
+R4
+Z36 8C:\Users\avira\Desktop\CPU\ALU PROJECT\Arithmetic_unit.vhd
+Z37 FC:\Users\avira\Desktop\CPU\ALU PROJECT\Arithmetic_unit.vhd
 l0
 L18
 VX9]K]g:A=@=gW7Y8Dc[K]0
 R7
 32
-Z22 !s108 1523535012.546000
-Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\Arithmetic_unit.vhd|
-Z24 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\Arithmetic_unit.vhd|
+Z38 !s108 1523552902.895000
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\Arithmetic_unit.vhd|
+Z40 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\Arithmetic_unit.vhd|
 R11
 R12
 !s100 H3e^9d:;[Q=cSzg:F3c4I2
@@ -100,33 +176,33 @@ R1
 R2
 R3
 DEx4 work 15 arithmetic_unit 0 22 X9]K]g:A=@=gW7Y8Dc[K]0
-l164
+l157
 L31
-V2bGJXdEX;kLKGggUmP=fl1
+V=hWN`7I6MA4P_0i_Xb5@T0
 R7
 32
-R22
-R23
-R24
+R38
+R39
+R40
 R11
 R12
-!s100 9z5hP=8OTjhz`8RIc2Bhh0
+!s100 H0B?_b7BIgzd=WX`lh56F1
 !i10b 1
 Eau_in_mux
-Z25 w1523455794
+Z41 w1523455794
 R2
 R3
 R4
-Z26 8C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_IN_MUX.vhd
-Z27 FC:\Users\avira\Desktop\CPU\ALU PROJECT\AU_IN_MUX.vhd
+Z42 8C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_IN_MUX.vhd
+Z43 FC:\Users\avira\Desktop\CPU\ALU PROJECT\AU_IN_MUX.vhd
 l0
 L17
 VCd81l`ZdP<0?F;eQ;_Z;L0
 R7
 32
-Z28 !s108 1523462172.581000
-Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_IN_MUX.vhd|
-Z30 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_IN_MUX.vhd|
+Z44 !s108 1523543750.472000
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_IN_MUX.vhd|
+Z46 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_IN_MUX.vhd|
 R11
 R12
 !s100 ;ENcal5TG552aSUL9JG=Z0
@@ -140,28 +216,28 @@ L30
 Vn=ARcMWGVOBI=Af1JeX_g1
 R7
 32
-R28
-R29
-R30
+R44
+R45
+R46
 R11
 R12
 !s100 o^?6O1a`cPfBNZY?i6>?E1
 !i10b 1
 Eau_out_mux
-Z31 w1523466094
+Z47 w1523466094
 R2
 R3
 R4
-Z32 8C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_OUT_MUX.vhd
-Z33 FC:\Users\avira\Desktop\CPU\ALU PROJECT\AU_OUT_MUX.vhd
+Z48 8C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_OUT_MUX.vhd
+Z49 FC:\Users\avira\Desktop\CPU\ALU PROJECT\AU_OUT_MUX.vhd
 l0
 L17
 VzFgN5YhF;NfKa6Qb_70B53
 R7
 32
-Z34 !s108 1523466282.423000
-Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_OUT_MUX.vhd|
-Z36 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_OUT_MUX.vhd|
+Z50 !s108 1523543750.705000
+Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_OUT_MUX.vhd|
+Z52 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\AU_OUT_MUX.vhd|
 R11
 R12
 !s100 DAj7agMai4[Ca[@E7LZl92
@@ -175,36 +251,36 @@ L30
 VDOM_A6FNOU>Ai>SD>bzSC1
 R7
 32
-R34
-R35
-R36
+R50
+R51
+R52
 R11
 R12
 !s100 e`I>:74hd[C5NTYiEGfQL1
 !i10b 1
 Eau_tb
-Z37 w1523534983
-Z38 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z53 w1523544422
+R20
 R1
 R2
 R3
 R4
-Z39 8C:/Users/avira/Desktop/CPU/ALU PROJECT/AU_tb.vhd
-Z40 FC:/Users/avira/Desktop/CPU/ALU PROJECT/AU_tb.vhd
+Z54 8C:/Users/avira/Desktop/CPU/ALU PROJECT/AU_tb.vhd
+Z55 FC:/Users/avira/Desktop/CPU/ALU PROJECT/AU_tb.vhd
 l0
 L19
 Vem1O6H?SLQ>6>Ez2=SOH@2
 R7
 32
-Z41 !s108 1523535012.866000
-Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/AU_tb.vhd|
-Z43 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/AU_tb.vhd|
+Z56 !s108 1523544455.105000
+Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/AU_tb.vhd|
+Z58 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/AU_tb.vhd|
 R11
 R12
 !s100 f9@Ufi1C]UGHMa:5d4cPL0
 !i10b 1
 Artl
-R38
+R20
 R1
 R2
 R3
@@ -214,28 +290,28 @@ L22
 VL58>5CPJ;MR=1LkTnGIgD2
 R7
 32
-R41
-R42
-R43
+R56
+R57
+R58
 R11
 R12
 !s100 APozR]5k:oaJ?@R?ZbY>:3
 !i10b 1
 Edff
-Z44 w1523478420
+Z59 w1523478420
 R2
 R3
 R4
-Z45 8C:\Users\avira\Desktop\CPU\ALU PROJECT\DFF.vhd
-Z46 FC:\Users\avira\Desktop\CPU\ALU PROJECT\DFF.vhd
+Z60 8C:\Users\avira\Desktop\CPU\ALU PROJECT\DFF.vhd
+Z61 FC:\Users\avira\Desktop\CPU\ALU PROJECT\DFF.vhd
 l0
 L17
 VzjG`YUf_]fmEPFgkRc=0E0
 R7
 32
-Z47 !s108 1523478430.857000
-Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\DFF.vhd|
-Z49 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\DFF.vhd|
+Z62 !s108 1523543750.884000
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\DFF.vhd|
+Z64 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\DFF.vhd|
 R11
 R12
 !s100 GW40b=6f:TRDieXnoh5Z;3
@@ -249,28 +325,28 @@ L25
 VY]L6E:j:;U]`=F>T;a@ci0
 R7
 32
-R47
-R48
-R49
+R62
+R63
+R64
 R11
 R12
 !s100 :bR@0dWXofz_b?W03o=WT3
 !i10b 1
 Efa
-Z50 w1523192301
+Z65 w1523192301
 R2
 R3
 R4
-Z51 8C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd
-Z52 FC:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd
+Z66 8C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd
+Z67 FC:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd
 l0
 L17
 V1]I3bEj]?iVd]GadK?7@k2
 R7
 32
-Z53 !s108 1523462173.107000
-Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd|
-Z55 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd|
+Z68 !s108 1523543751.075000
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd|
+Z70 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/FA.vhd|
 R11
 R12
 !s100 72M;2`F[bB[kh^R^PcEZM1
@@ -284,29 +360,29 @@ L26
 V^afXJY`Jmj?`eE2Y:@Ch40
 R7
 32
-R53
-R54
-R55
+R68
+R69
+R70
 R11
 R12
 !s100 8EXeAU2e]K?b3;7baI>cD1
 !i10b 1
 Emac_reg
-Z56 w1523432711
+Z71 w1523432711
 R1
 R2
 R3
 R4
-Z57 8C:/Users/avira/Desktop/CPU/ALU PROJECT/MAC_reg.vhd
-Z58 FC:/Users/avira/Desktop/CPU/ALU PROJECT/MAC_reg.vhd
+Z72 8C:/Users/avira/Desktop/CPU/ALU PROJECT/MAC_reg.vhd
+Z73 FC:/Users/avira/Desktop/CPU/ALU PROJECT/MAC_reg.vhd
 l0
 L18
 VYSkTZ=:WU^nb5LR7eR8Pe0
 R7
 32
-Z59 !s108 1523462173.265000
-Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/MAC_reg.vhd|
-Z61 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/MAC_reg.vhd|
+Z74 !s108 1523543751.382000
+Z75 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/MAC_reg.vhd|
+Z76 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/MAC_reg.vhd|
 R11
 R12
 !s100 EecgLdPc9o>U9mjKXYkke2
@@ -321,66 +397,66 @@ L28
 VQ@A8e[2F:][kA_bb=Fg:?0
 R7
 32
-R59
-R60
-R61
+R74
+R75
+R76
 R11
 R12
 !s100 i>ImgNILZPoKi6MBELT8L3
 !i10b 1
 Emin_max
-Z62 w1523535162
-Z63 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z77 w1523535329
+Z78 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R2
 R3
 R4
-Z64 8C:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd
-Z65 FC:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd
+Z79 8C:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd
+Z80 FC:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd
 l0
 L18
-V3ZLKX@@4Xzo_UVSZ>76mN3
-!s100 B8mnGN`=g]<c^OK:mU9`>3
+Vm9=V;K>fnFONGzjk`iUN:2
 R7
 32
-!i10b 1
-Z66 !s108 1523535167.308000
-Z67 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd|
-Z68 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd|
+Z81 !s108 1523543751.549000
+Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd|
+Z83 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/min_max.vhd|
 R11
 R12
+!s100 zSHFO=2<;^?zSMkzo<jSP3
+!i10b 1
 Amin_max_arch
-R63
+R78
 R2
 R3
-DEx4 work 7 min_max 0 22 3ZLKX@@4Xzo_UVSZ>76mN3
-l32
-L30
+DEx4 work 7 min_max 0 22 m9=V;K>fnFONGzjk`iUN:2
+l31
+L29
 VbUP_GJ0ZA8Aga4ORlgB8Z1
-!s100 kc9MGbWdgInmDaGYVeJCX0
 R7
 32
-!i10b 1
-R66
-R67
-R68
+R81
+R82
+R83
 R11
 R12
+!s100 lDFQo<AQ4?B:YhYPi><dH2
+!i10b 1
 Emul
-Z69 w1523445446
+Z84 w1523445446
 R1
 R2
 R3
 R4
-Z70 8C:\Users\avira\Desktop\CPU\ALU PROJECT\MUL.vhd
-Z71 FC:\Users\avira\Desktop\CPU\ALU PROJECT\MUL.vhd
+Z85 8C:\Users\avira\Desktop\CPU\ALU PROJECT\MUL.vhd
+Z86 FC:\Users\avira\Desktop\CPU\ALU PROJECT\MUL.vhd
 l0
 L17
 VoOKC]=;Y9AmShkJO_@IG81
 R7
 32
-Z72 !s108 1523462173.642000
-Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\MUL.vhd|
-Z74 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\MUL.vhd|
+Z87 !s108 1523543751.731000
+Z88 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\MUL.vhd|
+Z89 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\MUL.vhd|
 R11
 R12
 !s100 S3EODCRJQzX[1Uf16:j`H2
@@ -395,28 +471,28 @@ L27
 VeBK6B6fm8=^oVzJ2aL^]N1
 R7
 32
-R72
-R73
-R74
+R87
+R88
+R89
 R11
 R12
 !s100 GY0U1@TTaczH^ElzK2HH>2
 !i10b 1
 Emux31
-Z75 w1523346771
+Z90 w1523346771
 R2
 R3
 R4
-Z76 8C:/Users/avira/Desktop/CPU/ALU PROJECT/mux31.vhd
-Z77 FC:/Users/avira/Desktop/CPU/ALU PROJECT/mux31.vhd
+Z91 8C:/Users/avira/Desktop/CPU/ALU PROJECT/mux31.vhd
+Z92 FC:/Users/avira/Desktop/CPU/ALU PROJECT/mux31.vhd
 l0
 L17
 V[_7Yc:SYOU2ofYN`z>Jn@2
 R7
 32
-Z78 !s108 1523462173.973000
-Z79 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/mux31.vhd|
-Z80 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/mux31.vhd|
+Z93 !s108 1523543752.084000
+Z94 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/mux31.vhd|
+Z95 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/mux31.vhd|
 R11
 R12
 !s100 _aD7HWhiL@5MJ?IRS8FHG2
@@ -430,28 +506,28 @@ L27
 V<]Fh2^nEN4D@_aUU6RB8>1
 R7
 32
-R78
-R79
-R80
+R93
+R94
+R95
 R11
 R12
 !s100 X0Q:DKi?6OjC`h3>bW=]E1
 !i10b 1
 Emux_21
-Z81 w1523455494
+Z96 w1523455494
 R2
 R3
 R4
-Z82 8C:\Users\avira\Desktop\CPU\ALU PROJECT\mux_21.vhd
-Z83 FC:\Users\avira\Desktop\CPU\ALU PROJECT\mux_21.vhd
+Z97 8C:\Users\avira\Desktop\CPU\ALU PROJECT\mux_21.vhd
+Z98 FC:\Users\avira\Desktop\CPU\ALU PROJECT\mux_21.vhd
 l0
 L17
 V:oFgbc_MBDhgcmbY;j:1`1
 R7
 32
-Z84 !s108 1523462173.826000
-Z85 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\mux_21.vhd|
-Z86 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\mux_21.vhd|
+Z99 !s108 1523543751.921000
+Z100 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\mux_21.vhd|
+Z101 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\mux_21.vhd|
 R11
 R12
 !s100 Ib13YZM5RcW3;Bm81OFlk3
@@ -465,66 +541,140 @@ L27
 Vk3L;MnK2R@W;2AJbD>7z43
 R7
 32
-R84
-R85
-R86
+R99
+R100
+R101
 R11
 R12
 !s100 02K48RhE9EOmB<OP^0o4`0
 !i10b 1
+Eoutput_selector
+Z102 w1523543029
+R2
+R3
+R4
+Z103 8C:/Users/avira/Desktop/CPU/ALU PROJECT/OUTPUT_SELECTOR.vhd
+Z104 FC:/Users/avira/Desktop/CPU/ALU PROJECT/OUTPUT_SELECTOR.vhd
+l0
+L17
+V7<X=A35Y;nd9gZ7Z9JTP>0
+R7
+32
+Z105 !s108 1523543753.415000
+Z106 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/OUTPUT_SELECTOR.vhd|
+Z107 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/OUTPUT_SELECTOR.vhd|
+R11
+R12
+!s100 zXka4<@bYgATB0gfB9O1`2
+!i10b 1
+Aoutput_selector_arch
+R2
+R3
+DEx4 work 15 output_selector 0 22 7<X=A35Y;nd9gZ7Z9JTP>0
+l32
+L31
+VSB[<SRM81Cd2`S[86AG^12
+R7
+32
+R105
+R106
+R107
+R11
+R12
+!s100 1L:6kz`JlkXRHaV4QPmcE0
+!i10b 1
 Eshift_unit
-Z87 w1523354151
+Z108 w1523537611
 R1
 R2
 R3
 R4
-Z88 8C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit.vhd
-Z89 FC:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit.vhd
+Z109 8C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit.vhd
+Z110 FC:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit.vhd
 l0
 L18
-VfPaDlL84CSVkCgoFcc[>F3
+V9TGD>0GWI@@O6koIF>O8e2
 R7
 32
-Z90 !s108 1523462174.138000
-Z91 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit.vhd|
-Z92 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit.vhd|
+Z111 !s108 1523543752.276000
+Z112 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit.vhd|
+Z113 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit.vhd|
 R11
 R12
-!s100 jImQV:WM[H^;FQ@34:3>P1
+!s100 =ngQOIT[L62GJH5RZAdN]0
 !i10b 1
 Ashift_unit_arch
 R1
 R2
 R3
-DEx4 work 10 shift_unit 0 22 fPaDlL84CSVkCgoFcc[>F3
-l45
+DEx4 work 10 shift_unit 0 22 9TGD>0GWI@@O6koIF>O8e2
+l47
 L28
-VNARhh5CjWfW8_hmVzl[kn3
+VY4Hh4B]LgWXzOGo<_CCA]0
 R7
 32
-R90
-R91
-R92
+R111
+R112
+R113
 R11
 R12
-!s100 nCBC;]1gO:2MlElCgGjUb3
+!s100 nmO:B6l3O>g>zQf;oDGb_2
 !i10b 1
-Estatus_unit
-Z93 w1523455335
+Eshift_unit_tb
+Z114 w1523537300
+R20
 R1
 R2
 R3
 R4
-Z94 8C:\Users\avira\Desktop\CPU\ALU PROJECT\Status_unit.vhd
-Z95 FC:\Users\avira\Desktop\CPU\ALU PROJECT\Status_unit.vhd
+Z115 8C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit_tb.vhd
+Z116 FC:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit_tb.vhd
+l0
+L19
+VKJhU6AZ]7Pj]NchnE6zT?2
+R7
+32
+Z117 !s108 1523543752.772000
+Z118 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit_tb.vhd|
+Z119 !s107 C:/Users/avira/Desktop/CPU/ALU PROJECT/shift_unit_tb.vhd|
+R11
+R12
+!s100 @PHmdFV9d4f49[THzN7b60
+!i10b 1
+Artl
+R20
+R1
+R2
+R3
+DEx4 work 13 shift_unit_tb 0 22 KJhU6AZ]7Pj]NchnE6zT?2
+l38
+L22
+V;]o7>g4FB4o1a0JCh9fg41
+R7
+32
+R117
+R118
+R119
+R11
+R12
+!s100 ZfJGPNVP`C;YYh=9[Cl<h3
+!i10b 1
+Estatus_unit
+Z120 w1523455335
+R1
+R2
+R3
+R4
+Z121 8C:\Users\avira\Desktop\CPU\ALU PROJECT\Status_unit.vhd
+Z122 FC:\Users\avira\Desktop\CPU\ALU PROJECT\Status_unit.vhd
 l0
 L18
 VQjC_JO@V7D6hO:<?<c>K62
 R7
 32
-Z96 !s108 1523462174.321000
-Z97 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\Status_unit.vhd|
-Z98 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\Status_unit.vhd|
+Z123 !s108 1523543752.441000
+Z124 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\avira\Desktop\CPU\ALU PROJECT\Status_unit.vhd|
+Z125 !s107 C:\Users\avira\Desktop\CPU\ALU PROJECT\Status_unit.vhd|
 R11
 R12
 !s100 8;PG]@dkQ^g4W3_8KT8K@3
@@ -539,9 +689,9 @@ L28
 Vd>Z^0LSW[@;9E<0TM_FdL3
 R7
 32
-R96
-R97
-R98
+R123
+R124
+R125
 R11
 R12
 !s100 5H]AP?8a^6KijN6T_VlV]0
